@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ScanHistory {
+  id        BigInt   @id @unique @default(autoincrement())
+  start     Int
+  end       Int
+  createdAt DateTime @default(now())
+}
+
+enum OrderStatus {
+  Active
+  Cancelled
+  Filled
+}
+
+model Order {
+  id     String      @id @db.VarChar(66)
+  status OrderStatus
+
+  seller    String   @db.VarChar(42)
+  tokenA    String   @db.VarChar(42)
+  tokenB    String   @db.VarChar(42)
+  amountA   String
+  amountB   String
+  createdAt DateTime @default(now())
+
+  fills OrderFill[]
+}
+
+model OrderFill {
+  id BigInt @id @default(autoincrement())
+
+  buyer     String   @db.VarChar(42)
+  amountA   String
+  amountB   String
+  createdAt DateTime @default(now())
+
+  orderId String @db.VarChar(66)
+  order   Order  @relation(fields: [orderId], references: [id])
+}
