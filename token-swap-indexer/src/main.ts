@@ -9,7 +9,7 @@ async function bootstrap() {
   app.use(bodyParser.json({ limit: '50mb' }));
   app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
   app.enableCors({
-    origin: ['http://localhost:3000', 'https://octopus-app.netlify.app'],
+    origin: ['http://localhost:3000', 'https://token-swap-test.vercel.app'],
   });
 
   const config = new DocumentBuilder()
