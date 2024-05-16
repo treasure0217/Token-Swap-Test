@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input,
+select {
+  @apply outline-none bg-transparent;
+}
+
+table {
+  @apply border-collapse;
+}
+
+th,
+td {
+  @apply border border-black p-4;
+}
+
+th {
+  @apply text-center;
+}
+
+td {
+  @apply text-right;
+}

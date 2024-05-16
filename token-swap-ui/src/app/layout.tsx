@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { headers } from 'next/headers'
+import cx from 'classnames'
 import { cookieToInitialState } from 'wagmi'
 import { config } from '@/config/wagmi'
 import Web3ModalProvider from '@/contexts/wagmi'
@@ -12,12 +13,12 @@ export const metadata: Metadata = {
   title: 'Token Swap',
   description: 'Token swap test task',
   openGraph: {
-    title: 'Kitty AI',
+    title: 'Token Swap',
     type: 'website',
   },
   twitter: {
     card: 'summary',
-    title: 'Kitty AI',
+    title: 'Token Swap',
   },
 }
 
@@ -30,7 +31,12 @@ export default function RootLayout({
 
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body
+        className={cx(
+          inter.className,
+          'bg-gradient-radial from-blue-500/50 to-transparent',
+        )}
+      >
         <Web3ModalProvider initialState={initialState}>
           {children}
         </Web3ModalProvider>

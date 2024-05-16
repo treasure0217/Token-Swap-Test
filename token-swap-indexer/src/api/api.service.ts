@@ -20,6 +20,11 @@ export class ApiService {
             },
           },
           {
+            seller: {
+              contains: query,
+            },
+          },
+          {
             tokenA: {
               contains: query,
             },

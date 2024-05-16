@@ -109,12 +109,14 @@ export class IndexerService {
         }
       }
 
-      await this.prisma.scanHistory.create({
-        data: {
-          start: this.lastBlock + 1,
-          end: this.lastBlock,
-        },
-      });
+      if (logs.length) {
+        await this.prisma.scanHistory.create({
+          data: {
+            start: this.lastBlock + 1,
+            end: this.lastBlock,
+          },
+        });
+      }
 
       this.lastBlock = endBlock;
     } catch (err) {
@@ -138,7 +140,7 @@ export class IndexerService {
   private async handleCreate(description: LogDescription) {
     const [id, seller, tokenA, tokenB, amountA, amountB] = description.args;
 
-    this.prisma.order.create({
+    await this.prisma.order.create({
       data: {
         id: id,
         status: 'Active',
