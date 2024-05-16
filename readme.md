@@ -68,7 +68,7 @@ The frontend of the TokenSwap project is built with Next.js, providing a user-fr
 
 To get started with the TokenSwap project:
 
-1. Clone the repository(https://github.com/treasure0217/Token-Swap-Test).
+1. [Clone the repository](https://github.com/treasure0217/Token-Swap-Test)
 2. Install dependencies for backend and frontend.
 3. Configure environment variables.
 4. Deploy the smart contract and backend.
@@ -77,3 +77,6 @@ To get started with the TokenSwap project:
 ## Contributors
 
 - [Vasyl Dzinevskyi](https://github.com/treasure0217)
+
+## Acknowledgements
+This project is a home task submission for <strong>`zapit.io`</strong>. Special thanks to <strong>`Romit`</strong> for providing the challenge.
