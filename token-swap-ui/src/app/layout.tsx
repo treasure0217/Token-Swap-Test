@@ -7,7 +7,7 @@ import { config } from '@/config/wagmi'
 import Web3ModalProvider from '@/contexts/wagmi'
 import '@/styles/globals.css'
 
-export const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Token Swap',
