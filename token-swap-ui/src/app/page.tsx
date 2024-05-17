@@ -115,6 +115,26 @@ export default function Home() {
     <div className='flex h-screen w-full items-center justify-center backdrop-blur-sm'>
       <div className='w-full max-w-96 space-y-8 bg-gradient-radial from-blue-500 to-blue-500/50 p-2'>
         <div className='space-y-2'>
+          <div className='grid grid-cols-2 gap-2'>
+            <Link
+              href={`https://sepolia.etherscan.io/address/0x924FC8aF51c27E3a7C3500846F2B015bCc5c00E2#writeContract#F2`}
+              target='_blank'
+              className='block'
+            >
+              <button className='h-8 w-full border border-black bg-white'>
+                Get Token1
+              </button>
+            </Link>
+            <Link
+              href={`https://sepolia.etherscan.io/address/0x8803e1AEB5FC2aDA5B9f237F313f311fB36926cF#writeContract#F2`}
+              target='_blank'
+              className='block'
+            >
+              <button className='h-8 w-full border border-black bg-white'>
+                Get Token2
+              </button>
+            </Link>
+          </div>
           <div className='flex items-center gap-2 border border-black bg-gray-200 p-2'>
             <select
               className='rounded-sm border border-black p-1'
